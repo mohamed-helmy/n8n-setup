@@ -1,15 +1,26 @@
 n8n.helmy.xyz {
-    reverse_proxy n8n:5678
+    reverse_proxy n8n:5678 {
+      header_up X-Real-IP {remote}
+      response_buffers 50mb
+    }
     
-      encode gzip
-
+  encode zstd gzip
+  log {
+    level DEBUG
+  }
 }
 
 crawl4ai.helmy.xyz {
-    reverse_proxy crawl4ai:11235
+    reverse_proxy crawl4ai:11235 {
+      header_up X-Real-IP {remote}
+      response_buffers 50mb
+    }
     
-    # Enable compression
-    encode gzip
-    
+  encode zstd gzip
+  log {
+    level DEBUG
+  }
 
 }
+
+

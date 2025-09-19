@@ -70,7 +70,7 @@ services:
                 max-file: "10"
 
     caddy:
-        image: caddy:latest
+        image: caddy:2.9
         restart: "always"
         ports:
             - "80:80"
