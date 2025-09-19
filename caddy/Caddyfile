@@ -1,0 +1,15 @@
+n8n.helmy.xyz {
+    reverse_proxy n8n:5678
+    
+      encode gzip
+
+}
+
+crawl4ai.helmy.xyz {
+    reverse_proxy crawl4ai:11235
+    
+    # Enable compression
+    encode gzip
+    
+
+}
